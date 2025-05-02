@@ -17,7 +17,7 @@ def preprocess_image(image):
     grayscale_image = image.convert('L')
     
     # Resize the image to 28x28
-    resized_image = grayscale_image.resize((28, 28), Image.ANTIALIAS)
+    resized_image = grayscale_image.resize((28, 28), Image.Resampling.LANCZOS)
     
     # Convert to numpy array and normalize
     img_array = np.array(resized_image) / 255.0
